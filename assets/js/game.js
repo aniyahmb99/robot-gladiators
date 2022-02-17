@@ -7,7 +7,12 @@ var enemyNames = [" Roborto ", " Amy Android ", " Robo Trumble "];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
+console.log(enemyNames);
+console.log(enemyNames.length);
+console.log(enemyNames[0]);
+console.log(enemyNames[3]);
 
+// fight function (now with parameter for enemy's name)
 var fight = function(enemyName) {
     // repeat and execute as long as the enemy-robot is alive
     while(playerHealth > 0 && enemyHealth > 0) {
@@ -31,7 +36,7 @@ if (promptFight === "skip" || promptFight === "SKIP") {
     // remove enemy's health by subtracting the amount set in the playerAttack variable
     enemyHealth = enemyHealth - playerAttack;
     console.log(
-        playerName + " attacked " + enemyName + ". " + enemyName[0] + " now has "
+        playerName + " attacked " + enemyName + ". " + enemyName + " now has "
  + enemyHealth + " health remaining.");
 
  // check enemy's health
@@ -43,18 +48,7 @@ if (promptFight === "skip" || promptFight === "SKIP") {
 
     // leave while() loop since enemy is dead
     break;
-
-
-    // place fight function code block here ...
-         // Alert players that they are starting the round
-    window.alert("Welcome to Robot Gladiators!");
-    
-    if (promptFight === "fight" || promptFight === "FIGHT") {
-
-    }
-    
-    
-    }
+ }
     else {
         window.alert(enemyName + " still has " + enemyHealth + " health left.");
     }
@@ -69,11 +63,11 @@ if (promptFight === "skip" || promptFight === "SKIP") {
     if (playerHealth <= 0) {
         window.alert(playerName + " has died!");
         break;
-    }
-    else {
+    } else {
         window.alert(playerName + " still has " + playerHealth + " health left.");
+      }
     }
-    
+};
     // fight each enemy-robot by looping over them and fighting them one at a time
 for (var i = 0; i < enemyNames.length; i++) {
         // if player is still alive, keep fighting
@@ -98,4 +92,4 @@ for (var i = 0; i < enemyNames.length; i++) {
         window.alert('You have lost your robot in battle! Game Over!');
         break; 
     }
-    }
+}
