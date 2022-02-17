@@ -68,7 +68,11 @@ if (promptFight === "skip" || promptFight === "SKIP") {
       }
     }
 };
+}
     // fight each enemy-robot by looping over them and fighting them one at a time
+
+// function to start a new game
+var startGame = function() {
 for (var i = 0; i < enemyNames.length; i++) {
         // if player is still alive, keep fighting
     if (playerHealth > 0) {
@@ -86,10 +90,14 @@ for (var i = 0; i < enemyNames.length; i++) {
         // pass the pickedEnemyName variable's value into the fight function, where it will assume the value of the enemyName parameter
         fight(pickedEnemyName);
      }
-    
+
     // if player isn't alive, stop the game 
     else {
         window.alert('You have lost your robot in battle! Game Over!');
         break; 
     }
-}
+ }
+};
+
+// start the game when the page loads
+startGame();
