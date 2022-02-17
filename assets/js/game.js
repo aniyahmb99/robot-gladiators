@@ -108,7 +108,7 @@ for (var i = 0; i < enemyNames.length; i++) {
         }
      }
 
-    // if player isn't alive, stop the game 
+    // if player isn't alive, break out of the loop and let endGame function run
     else {
         window.alert('You have lost your robot in battle! Game Over!');
         break; 
@@ -116,17 +116,16 @@ for (var i = 0; i < enemyNames.length; i++) {
     // after the loop ends, player is either out of health or enemies to fight, so run the endGame function 
     endGame();
   } 
-  startGame ();
   // function to end the entire game
   var endGame = function() {
+    window.alert("The game has now ended. Let's see how you did!");
       // if player is still alive, player wins!
       if (playerHealth > 0) {
           window.alert("Great job, you've survived the game! You now have a score of " + playerMoney + ".");
       }
       else {
-          window.alert("You've lost your robot in battle.");
+          window.alert("You've lost your robot in battle!");
       }
-    window.alert("The game has now ended. Let's see how you did!");
   }
   // ask player if they'd like to play again
   var playAgainConfirm = window.confirm("Would you like to play again?");
