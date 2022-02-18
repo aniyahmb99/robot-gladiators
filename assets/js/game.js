@@ -23,7 +23,7 @@ var fight = function(enemyName) {
 if (promptFight === "skip" || promptFight === "SKIP") {
     
     // confirm player wants to skip
-    var confirmSKIP = window.confirm("Are you sure you'd like to quit?");
+    var confirmSkip = window.confirm("Are you sure you'd like to quit?");
 
     // if yes (true), leave fight
     if (confirmSkip) {
@@ -118,16 +118,7 @@ for (var i = 0; i < enemyNames.length; i++) {
   } 
   startGame ();
   // function to end the entire game
-  var endGame = function() {
-      // if player is still alive, player wins!
-      if (playerHealth > 0) {
-          window.alert("Great job, you've survived the game! You now have a score of " + playerMoney + ".");
-      }
-      else {
-          window.alert("You've lost your robot in battle.");
-      }
-    window.alert("The game has now ended. Let's see how you did!");
-  }
+  
   // ask player if they'd like to play again
   var playAgainConfirm = window.confirm("Would you like to play again?");
 
@@ -139,7 +130,16 @@ for (var i = 0; i < enemyNames.length; i++) {
       window.alert("Thank you for playing Robot Gladiators! Come back soon!");
   }
 };
-
+var endGame = function() {
+    // if player is still alive, player wins!
+    if (playerHealth > 0) {
+        window.alert("Great job, you've survived the game! You now have a score of " + playerMoney + ".");
+    }
+    else {
+        window.alert("You've lost your robot in battle.");
+    }
+  window.alert("The game has now ended. Let's see how you did!");
+}
 var shop = function() {
     // ask player what they'd like to do
     var shopOptionPrompt = window.prompt("Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one: 'REFILL', 'UPGRADE', or 'LEAVE' to make a choice.");
