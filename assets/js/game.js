@@ -106,7 +106,7 @@ for (var i = 0; i < enemyNames.length; i++) {
             shop();
             }
         }
-     }
+     } j 
 
     // if player isn't alive, break out of the loop and let endGame function run
     else {
