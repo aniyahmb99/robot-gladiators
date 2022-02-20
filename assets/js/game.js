@@ -44,6 +44,7 @@ var fight = function(enemy) {
     }
     // repeat and execute as long as the enemy-robot is alive
     while(playerInfo.health > 0 && enemy.health > 0) {
+        if (isPlayerTurn) {
         // ask player if they'd like to fight or skip using fightOrSkip function
        if (fightOrSkip()) {
            // if true, leave fight by breaking loop
