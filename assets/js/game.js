@@ -12,6 +12,8 @@ var fightOrSkip = function() {
 if (promptFight === "" || promptFight === null) {
     window.alert("You need to provide a valid answer! Please try again.");
     return fightOrSkip();
+}
+
 
   
     // if player picks "skip" confirm and then stop the loop
@@ -71,7 +73,7 @@ var fight = function(enemy) {
       }
     }
 };
-}
+
     // fight each enemy-robot by looping over them and fighting them one at a time
 
 // function to start a new game
@@ -96,7 +98,7 @@ for (var i = 0; i < enemyInfo.length; i++) {
         // use debugger to to pause script from running and check what's going on at moment in the code
         // debugger;
         // pass the pickedenemy.name variable's value into the fight function, where it will assume the value of the enemy.name parameter
-        fight(pickedEnemyObj);
+        var fight = (pickedEnemyObj);
 
         // if player is still alive and we're not at the last enemy in the array
         if (playerInfo.health > 0 && i < enemyInfo.length - 1) {
