@@ -14,19 +14,22 @@ if (promptFight === "" || promptFight === null) {
     return fightOrSkip();
 }
 
+promptFight = promptFight.toLowerCase();
 
   
     // if player picks "skip" confirm and then stop the loop
-    if (promptFight === "skip" || promptFight === "SKIP") {
+    if (promptFight === "skip") {
       // confirm player wants to skip
       var confirmSkip = window.confirm("Are you sure you'd like to quit?");
   
       // if yes (true), leave fight
       if (confirmSkip) {
         window.alert(playerInfo.name + " has decided to skip this fight. Goodbye!");
-        // subtract money from playerMoney for skipping
-        playerInfo.playerMoney = playerInfo.money - 10;
-        shop();
+        // subtract money from playerMoney for skipping, but don't let them go into the negative
+        playerInfo.money = Math.max(0, playerInfo.money - 10);
+
+        // return true if player wants to leave
+        return true;
       }
     }
   }
@@ -34,7 +37,11 @@ if (promptFight === "" || promptFight === null) {
 var fight = function(enemy) {
     // repeat and execute as long as the enemy-robot is alive
     while(playerInfo.health > 0 && enemy.health > 0) {
-        fightOrSkip(); 
+        // ask player if they'd like to fight or skip using fightOrSkip function
+       if (fightOrSkip()); {
+           // if true, leave fight by breaking loop
+           break;
+       }
         var damage = randomNumber(playerInfo.attack - 3, playerInfo.attack);
     // remove enemy's health by subtracting the amount set in the playerAttack variable
     enemy.health = Math.max(0, enemy.health - playerInfo.attack);
@@ -98,7 +105,7 @@ for (var i = 0; i < enemyInfo.length; i++) {
         // use debugger to to pause script from running and check what's going on at moment in the code
         // debugger;
         // pass the pickedenemy.name variable's value into the fight function, where it will assume the value of the enemy.name parameter
-        var fight = (pickedEnemyObj);
+        fight(pickedEnemyObj);
 
         // if player is still alive and we're not at the last enemy in the array
         if (playerInfo.health > 0 && i < enemyInfo.length - 1) {
